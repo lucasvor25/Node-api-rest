@@ -17,5 +17,17 @@ return Modelo.findAll()
             throw new Error('Fornecedor nao encontrado')
         }
         return encontrado
+    },
+    atualizar (id, dadosParaAtualizar) {
+        return Modelo.update(
+            dadosParaAtualizar,{
+                where: {id:id}
+            }
+        )
+    },
+    remover (id) {
+        return Modelo.destroy({
+            where: { id:id }
+        })
     }
 }
